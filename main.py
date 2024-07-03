@@ -6,8 +6,8 @@ import uvicorn
 # SERVER_HOST = "localhost"
 # SERVER_PORT = 8000
 
-SERVER_HOST = "127.0.0.1"
-SERVER_PORT = 5000
+# SERVER_HOST = "127.0.0.1"
+# SERVER_PORT = 5000
 
 # Initialize the api
 app = FastAPI()
@@ -17,10 +17,10 @@ async def estimate_price(request:ApiRequest) -> ApiResponse:
     estimated_price = PriceEstimator().predict_price(request=request)
     return estimated_price
 
-if __name__=="__main__":
-    uvicorn.run(
-        "main:app",
-        host=SERVER_HOST,
-        port=SERVER_PORT,
-        reload=True # just for development usage - high consumer
-    )
+# if __name__=="__main__":
+#     uvicorn.run(
+#         "main:app",
+#         host=SERVER_HOST,
+#         port=SERVER_PORT,
+#         reload=True # just for development usage - high consumer
+#     )
