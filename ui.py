@@ -11,11 +11,16 @@ from hugchat.login import Login
 st.write("# Calculate the Market Price of your Apartment in 2024?")
 
 # Text fields:
-ap_size = st.text_input(label="Surface in square meters", value = 0, max_chars = 3)
+ap_size = st.number_input(label="Surface in square meters", value = 50, min_value=25, max_value = 120)
 
-ap_bathrooms = st.text_input(label="Number of bathrooms", value = 1, max_chars = 1)
+ap_bathrooms = st.number_input(label="Number of bathrooms", min_value = 1, max_value = 3)
 
-ap_year_built = st.text_input(label = "Year built", value = 2000)
+# Additional, not used:
+ap_bedrooms = st.number_input(label="Number of bedrooms", value = 2, min_value=1, max_value = 5)
+ap_pass_through = st.checkbox("Check if the apartment is pass-through?")
+
+#
+ap_year_built = st.number_input(label = "Year built", value = 2000, min_value=1985, max_value=2024)
 
 ## Store the predicted price here to use the value in the next button (prompt)
 if 'predicted_price' not in st.session_state:
