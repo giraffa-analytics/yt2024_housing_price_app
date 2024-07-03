@@ -28,16 +28,16 @@ if 'predicted_price' not in st.session_state:
 
 # Button to calculate price
 pred_price = st.button(label = "Calculate Price")
-
+# 
 # Convert my input data into a request to pass to the api
 user_input = {"size":int(ap_size), "year_built":int(ap_year_built), "bathrooms":int(ap_bathrooms)}
-api_prediction = requests.post('http://127.0.0.1:5000/estimate', json = user_input)
+# api_prediction = requests.post('http://127.0.0.1:5000/estimate', json = user_input)
 
 if pred_price:
     st.write("## Market Price: ")
-    predicted_price = api_prediction.json()["price"]
-    st.session_state.predicted_price = predicted_price
-    st.write(f"### {predicted_price} Euros")
+    # predicted_price = api_prediction.json()["price"]
+    # st.session_state.predicted_price = predicted_price
+    # st.write(f"### {predicted_price} Euros")
     #calculate price
 else:
     st.write("Press to calculate the price.")
