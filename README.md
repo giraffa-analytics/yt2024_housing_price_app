@@ -1,5 +1,5 @@
 # yt2024_housing_price_app
-From Jupyter Notebook to web application: deploy your first ML model!
+From Jupyter Notebook to API: deploy your first ML model!
 
 1. Create a virtual environment
 
